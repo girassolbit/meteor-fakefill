@@ -23,7 +23,7 @@ Current methods of Fakefill object:
 ```
 ### Fakefill.genDoc(MongoCollectionInstance)
 ```js
-	var doc = Fakefill.fromSchema(Schemas.User);
+	var doc = Fakefill.genDoc(Users);
 
 	=> { username: 'Maria_Juana666', email: 'aycarmela@example.net', ... }
 ```		
