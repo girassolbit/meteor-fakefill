@@ -5,7 +5,7 @@ Create a random fake document based in a SimpleSchema (more documentation are co
 
 Current methods of Fakefill object:
 	- Fakefill.fromSchema(simpleSchemaInstance)
-		`javascript
+		```js
 			var doc = Fakefill.fromSchema(new SimpleSchema({
 				userName: {
 					type: String,
@@ -19,11 +19,11 @@ Current methods of Fakefill object:
 			}));
 
 			=> { username: 'Maria_Juana666', email: 'imnotyourfatha@example.net' }
-		`
+		```
 	- Fakefill.genDoc(MongoCollectionInstance)
-		`javascript
+		```js
 			var doc = Fakefill.fromSchema(Schemas.User);
 
 			=> { username: 'Maria_Juana666', email: 'aycarmela@example.net', ... }
-		`		
+		```		
 
