@@ -28,5 +28,66 @@ Current methods of Fakefill object:
 	=> { username: 'Maria_Juana666', email: 'aycarmela@example.net', ... }
 ```		
 
+### Mongo.Collection instances
+You can call Fakefill from your Collection namespace
+
+### Colection.fakefill.gen
+```js
+	var Authors = new Mongo.Collection('authors');
+	Authors.attachSchema(new SimpleSchema({
+		profile: {
+			type: new SimpleSchema({
+				firstName: {
+					type: String
+				},
+
+				lastName: {
+					type: String
+				},
+
+				email: {
+					type: String
+				}
+			})
+		}
+	}));
+
+	var docs = Authors.fakefill.gen(10); //
+	=> [ { profile: { firstName: '...', lastName: '...', email: '...' }, ..., ..., ... } ]
+```
+This method doesn't insert nothing to your collection, just return a array with
+random documents.
+
+### Collection.fakefill.insert
+```js
+	var Authors = new Mongo.Collection('authors');
+	Authors.attachSchema(new SimpleSchema({
+		profile: {
+			type: new SimpleSchema({
+				firstName: {
+					type: String
+				},
+
+				lastName: {
+					type: String
+				},
+
+				email: {
+					type: String
+				}
+			})
+		}
+	}));
+
+	var docs = Authors.fakefill.insert(10); //
+	=> [ { profile: { firstName: '...', lastName: '...', email: '...' }, ..., ..., ... } ]
+```
+This method insert the number you specified of random document to your collection
+
+
+
 ### Faker
 This package includes faker.js, so you can use it too calling `faker`.
+
+### Pull request
+Accepting pull requests that increase Fakefill perfomance.
