@@ -2,7 +2,7 @@ Package.describe({
   name: 'girassolbit:fakefill',
   version: '0.0.1',
   summary: 'Create a random fake document based in a SimpleSchema',
-  git: '',
+  git: 'https://github.com/girassolbit/meteor-fakefill.git',
   documentation: 'README.md'
 });
 
@@ -17,6 +17,8 @@ Package.onUse(function(api){
   
   api.use('aldeed:simple-schema@1.3.2');
   api.imply('aldeed:simple-schema');
+  api.use('mongo@1.1.0');
+  api.imply('mongo');
   
   api.addFiles(['fakefill-util.js', 'fakefill.js'], ['server']);
   api.export(['Fakefill', 'faker'], ['server']);
@@ -26,5 +28,7 @@ Package.onTest(function(api){
   api.use('tinytest');
   api.use('girassolbit:fakefill');
   api.use('aldeed:simple-schema@1.3.2');
+  api.use('mongo@1.1.0');
+  
   api.addFiles('fakefill-tests.js', ['server']); 
 });
