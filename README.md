@@ -55,7 +55,7 @@ You can call Fakefill from your Collection namespace
 	var docs = Authors.fakefill.gen(10); //
 	=> [ { profile: { firstName: '...', lastName: '...', email: '...' }, ..., ..., ... } ]
 ```
-This method doesn't insert nothing to your collection, just return a array with
+This method doesn't insert nothing to your collection, just returns a array with
 random documents.
 
 ### Collection.fakefill.insert
@@ -82,7 +82,7 @@ random documents.
 	var docs = Authors.fakefill.insert(10); //
 	=> [ { profile: { firstName: '...', lastName: '...', email: '...' }, ..., ..., ... } ]
 ```
-This method insert the number you specified of random document to your collection
+This method inserts the number you specified of random document to your collection
 
 
 
