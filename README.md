@@ -28,3 +28,5 @@ Current methods of Fakefill object:
 	=> { username: 'Maria_Juana666', email: 'aycarmela@example.net', ... }
 ```		
 
+### Faker
+This package includes faker.js, so you can use it too calling `faker`.
