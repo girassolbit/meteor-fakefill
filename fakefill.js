@@ -56,6 +56,10 @@ Fakefill = {
 		} else {
 			throw new Error('There\'s no schema attached to ' + collection._name + ' collection.');
 		}
+	},
+
+	setLocale: function(locale){
+		faker.locate = locale;
 	}
 }
 

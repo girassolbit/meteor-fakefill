@@ -3,7 +3,7 @@ Fakefill
 
 Create a random fake document based in a SimpleSchema (more documentation are coming, fellas)
 
-Current methods of Fakefill object:
+## How to use
 
 ### Fakefill.fromSchema(simpleSchemaInstance)
 ```js
@@ -27,6 +27,48 @@ Current methods of Fakefill object:
 
 	=> { username: 'Maria_Juana666', email: 'aycarmela@example.net', ... }
 ```		
+
+### Fakefill.setLocale(locate)
+```js
+	Fakefill.setLocale('pt_BR');
+```
+
+Set the language locate you want. See the supported locales:
+
+ * de
+ * de_AT
+ * de_CH
+ * en
+ * en_AU
+ * en_BORK
+ * en_CA
+ * en_GB
+ * en_IE
+ * en_IND
+ * en_US
+ * en_au_ocker
+ * es
+ * fa
+ * fr
+ * fr_CA
+ * ge
+ * it
+ * ja
+ * ko
+ * nb_NO
+ * nep
+ * nl
+ * pl
+ * pt_BR
+ * ru
+ * sk
+ * sv
+ * tr
+ * uk
+ * vi
+ * zh_CN
+ * zh_TW
+
 
 ### Mongo.Collection instances
 You can call Fakefill from your Collection namespace
