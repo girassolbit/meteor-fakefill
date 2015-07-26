@@ -1,7 +1,15 @@
 Fakefill
 ========
 
-Create a random fake document based in a SimpleSchema (more documentation are coming, fellas)
+Create a random fake data such as names, addresses, and phone numbers based in your SimpleSchema
+
+### Installation
+
+Install using Meteor's package management system:
+
+```bash
+> meteor add gbit:fakefill
+```
 
 ## How to use
 
