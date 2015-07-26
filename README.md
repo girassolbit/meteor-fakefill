@@ -3,7 +3,7 @@ Fakefill
 
 Create a random fake data such as names, addresses, and phone numbers based in your SimpleSchema
 
-### Installation
+## Installation
 
 Install using Meteor's package management system:
 
