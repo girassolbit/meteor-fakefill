@@ -14,9 +14,9 @@ Npm.depends({
 Package.onUse(function(api){
   api.versionsFrom('METEOR@1.1.0.2');
   
-  api.use('aldeed:simple-schema');
-  api.use('mongo');
-  api.use('underscore');
+  api.use('aldeed:simple-schema@1.3.3');
+  api.use('mongo@1.1.0');
+  api.use('underscore@1.0.3');
   
   api.addFiles('lib/fakefill.js', 'server');
   api.addFiles('lib/fakefill-util.js', 'server');
