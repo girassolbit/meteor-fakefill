@@ -1,34 +1,34 @@
 Package.describe({
-  name: 'girassolbit:fakefill',
-  version: '0.0.1',
-  summary: 'Create a random fake document based in a SimpleSchema',
+  name: 'gbit:fakefill',
+  version: '0.0.2',
+  summary: 'Create a random fake data such as names, addresses, and phone numbers based in your SimpleSchema',
   git: 'https://github.com/girassolbit/meteor-fakefill.git',
   documentation: 'README.md'
 });
 
 Npm.depends({
   'faker': '3.0.0',
-  'underscore': '1.8.3',
   'clj-fuzzy': '0.2.1'
 });
 
 Package.onUse(function(api){
-  api.versionsFrom('1.1.0.2');
+  api.versionsFrom('METEOR@1.1.0.2');
   
-  api.use('aldeed:simple-schema@1.3.2');
-  api.imply('aldeed:simple-schema');
-  api.use('mongo@1.1.0');
-  api.imply('mongo');
+  api.use('aldeed:simple-schema');
+  api.use('mongo');
+  api.use('underscore');
   
-  api.addFiles(['fakefill-util.js', 'fakefill.js'], ['server']);
-  api.export(['Fakefill', 'faker'], ['server']);
+  api.addFiles('lib/fakefill.js', 'server');
+  api.addFiles('lib/fakefill-util.js', 'server');
+  api.export('Fakefill', 'server');
+  api.export('faker', 'server');
 });
 
 Package.onTest(function(api){
   api.use('tinytest');
-  api.use('girassolbit:fakefill');
-  api.use('aldeed:simple-schema@1.3.2');
-  api.use('mongo@1.1.0');
+  api.use('gbit:fakefill');
+  api.use('aldeed:simple-schema');
+  api.use('mongo');
   
-  api.addFiles('fakefill-tests.js', ['server']); 
+  api.addFiles('tests/fakefill-tests.js', 'server'); 
 });
