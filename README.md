@@ -1,4 +1,4 @@
-[![Stories in Ready](https://badge.waffle.io/girassolbit/meteor-fakefill.png?label=ready&title=Ready)](https://waffle.io/girassolbit/meteor-fakefill)
+[![Stories in Ready](https://badge.waffle.io/girassolbit/meteor-fakefill.png?label=ready&title=Ready)](https://waffle.io/girassolbit/meteor-fakefill) [![Build Status](https://travis-ci.org/girassolbit/meteor-fakefill.svg?branch=master)](https://travis-ci.org/girassolbit/meteor-fakefill)
 Fakefill
 ========
 
