@@ -16,7 +16,53 @@ Install using Meteor's package management system:
 $ meteor test-packages ./
 ```
 
-## How to use
+# How to use
+
+## Mongo.Collection instances
+You can call Fakefill from your Collection namespace
+
+### Collection.fakefill.insert
+Do you want to easily seed your collection with 10 fake docs?
+Just do it:
+```js
+	var docs = Authors.fakefill.insert(number, overrides, options);
+	=> [ { profile: { firstName: '...', lastName: '...', email: '...' }, ..., ..., ... } ]
+```
+This method inserts the number you specified of random documents to your collection.
+If you want to omit some field, just pass an array in `options.omit`:
+```js
+	var docs = Authors.fakefill.insert(number, overrides, {
+		omit: ['email']
+	});
+	=> [ { profile: { firstName: '...', lastName: '...' }, ..., ..., ... } ]
+```
+
+### Colection.fakefill.gen
+This method doesn't insert nothing to your collection, just returns a array with
+random documents.
+```js
+	var Authors = new Mongo.Collection('authors');
+	Authors.attachSchema(new SimpleSchema({
+		profile: {
+			type: new SimpleSchema({
+				firstName: {
+					type: String
+				},
+
+				lastName: {
+					type: String
+				},
+
+				email: {
+					type: String
+				}
+			})
+		}
+	}));
+
+	var docs = Authors.fakefill.gen(10); //
+	=> [ { profile: { firstName: '...', lastName: '...', email: '...' }, ..., ..., ... } ]
+```
 
 ### Fakefill goal: easily seed data
 Do you want to seed your collection in a single line with zero effort?
@@ -25,7 +71,7 @@ Do you want to seed your collection in a single line with zero effort?
 Users.fakefill.gen(10);
 ```
 
-### Fakefill.fromSchema(simpleSchemaInstance, overrides)
+### Fakefill.fromSchema(simpleSchemaInstance, overrides, options)
 You can get a random totally filled doc just passing a schema to `Fakefill.fromSchema`.
 Fakefill will load all the fields and generate the proper data for each of them.
 So just relax and: 
@@ -115,45 +161,6 @@ Set the language locate you want. See the supported locales:
  * zh_CN
  * zh_TW
 
-
-## Mongo.Collection instances
-You can call Fakefill from your Collection namespace
-
-### Collection.fakefill.insert
-Do you want to easily seed your collection of 10 fake docs?
-Just do it:
-```js
-	var docs = Authors.fakefill.insert(10); //
-	=> [ { profile: { firstName: '...', lastName: '...', email: '...' }, ..., ..., ... } ]
-```
-This method inserts the number you specified of random documents to your collection
-
-### Colection.fakefill.gen
-This method doesn't insert nothing to your collection, just returns a array with
-random documents.
-```js
-	var Authors = new Mongo.Collection('authors');
-	Authors.attachSchema(new SimpleSchema({
-		profile: {
-			type: new SimpleSchema({
-				firstName: {
-					type: String
-				},
-
-				lastName: {
-					type: String
-				},
-
-				email: {
-					type: String
-				}
-			})
-		}
-	}));
-
-	var docs = Authors.fakefill.gen(10); //
-	=> [ { profile: { firstName: '...', lastName: '...', email: '...' }, ..., ..., ... } ]
-```
 
 ### Faker
 This package includes gbit:faker, so you can use it too calling `faker`.

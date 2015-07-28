@@ -140,6 +140,19 @@ Tinytest.add('Overrides - Should call override method', function(test){
 	test.isTrue(/([a-z]+)\s([a-z+])/gi.test(doc.userName), genErrMsg(doc.userName));
 });
 
+Tinytest.add('Omit - Should omit fields', function(test){
+	var doc = Fakefill.fromSchema(new SimpleSchema({
+		omitMe: {
+			type: String
+		},
+
+		name: {
+			type: String
+		}
+	}), null, {omit: ['omitMe']});
+
+	test.isUndefined(doc.omitMe, genErrMsg(doc.omitMe));
+});
 
 function genErrMsg(val){
 	return 'Generated value was ' + val;
