@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/girassolbit/meteor-fakefill.png?label=ready&title=Ready)](https://waffle.io/girassolbit/meteor-fakefill)
 Fakefill
 ========
 
