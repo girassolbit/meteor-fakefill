@@ -62,7 +62,7 @@ var doc = Fakefill.fromSchema(new SimpleSchema({
 	}
 });
 
-=> { username: 'Maria_Juana666', email: 'imnotyourfatha@example.net' }
+=> { username: 'oh my god', email: 'imnotyourfatha@example.net' }
 ```
 That's it.
 
