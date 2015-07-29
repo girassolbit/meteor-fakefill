@@ -22,17 +22,17 @@ $ meteor test-packages ./
 ## Mongo.Collection instances
 You can call Fakefill from your Collection namespace
 
-### Collection.fakefill.insert
+### Collection.fakefill().insert
 Do you want to easily seed your collection with 10 fake docs?
 Just do it:
 ```js
-	var docs = Authors.fakefill.insert(number, overrides, options);
+	var docs = Authors.fakefill().insert(number, overrides, options);
 	=> [ { profile: { firstName: '...', lastName: '...', email: '...' }, ..., ..., ... } ]
 ```
 This method inserts the number you specified of random documents to your collection.
 If you want to omit some field, just pass an array in `options.omit`:
 ```js
-	var docs = Authors.fakefill.insert(number, overrides, {
+	var docs = Authors.fakefill().insert(number, overrides, {
 		omit: ['email']
 	});
 	=> [ { profile: { firstName: '...', lastName: '...' }, ..., ..., ... } ]
@@ -61,7 +61,7 @@ random documents.
 		}
 	}));
 
-	var docs = Authors.fakefill.gen(10); //
+	var docs = Authors.fakefill().gen(10); //
 	=> [ { profile: { firstName: '...', lastName: '...', email: '...' }, ..., ..., ... } ]
 ```
 
@@ -69,7 +69,7 @@ random documents.
 Do you want to seed your collection in a single line with zero effort?
 ```js
 // Create for me 10 random users, please.
-Users.fakefill.gen(10);
+Users.fakefill().gen(10);
 ```
 
 ### Fakefill.fromSchema(simpleSchemaInstance, overrides, options)
