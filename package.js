@@ -21,8 +21,8 @@ Package.onUse(function(api){
   api.use('gbit:faker@0.0.3');
   api.imply('gbit:faker');
 
-  api.addFiles('lib/fakefill-util.js', ['client', 'server']);  
-  api.addFiles('lib/fakefill.js', ['client', 'server']);
+  api.addFiles('lib/fakefill-util.js', 'server');  
+  api.addFiles('lib/fakefill.js', 'server');
   api.export('Fakefill', 'server');
 });
 
