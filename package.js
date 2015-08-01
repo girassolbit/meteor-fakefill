@@ -17,13 +17,12 @@ Package.onUse(function(api){
   api.use('aldeed:simple-schema@1.3.3');
   api.use('mongo');
   api.use('logging');
-  api.use('underscore');
+  api.use('erasaur:meteor-lodash@3.10.0');
   api.use('gbit:faker@0.0.3');
   api.imply('gbit:faker');
 
-  
-  api.addFiles('lib/fakefill.js', 'server');
-  api.addFiles('lib/fakefill-util.js', 'server');
+  api.addFiles('lib/fakefill-util.js', ['client', 'server']);  
+  api.addFiles('lib/fakefill.js', ['client', 'server']);
   api.export('Fakefill', 'server');
 });
 
