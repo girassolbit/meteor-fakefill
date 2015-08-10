@@ -1,6 +1,6 @@
 Package.describe({
   name: 'gbit:fakefill',
-  version: '0.0.3',
+  version: '0.0.4',
   summary: 'Create a random fake data such as names, addresses, and phone numbers based in your SimpleSchema',
   git: 'https://github.com/girassolbit/meteor-fakefill.git',
   documentation: 'README.md'
